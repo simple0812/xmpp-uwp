@@ -1,0 +1,16 @@
+﻿<Page
+    x:Class="XApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="20">
+        <Button Content="open" x:Name="btnOpen" Click="BtnOpen_OnClick"></Button>
+        <TextBox x:Name="txtSend" Text="hello world"></TextBox>
+        <Button Content="send" x:Name="btnSend" Click="BtnSend_OnClick"></Button>
+        <TextBlock TextWrapping="Wrap" x:Name="txtRece"></TextBlock>
+    </StackPanel>
+</Page>
