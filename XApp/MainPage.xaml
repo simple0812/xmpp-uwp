@@ -8,9 +8,12 @@
     mc:Ignorable="d">
 
     <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="20">
+        <TextBox x:Name="txtName" Header="用户名" Text="test"></TextBox>
         <Button Content="open" x:Name="btnOpen" Click="BtnOpen_OnClick"></Button>
-        <TextBox x:Name="txtSend" Text="hello world"></TextBox>
+        <TextBox x:Name="txtRece" Text="zl" Header="接受者"></TextBox>
+        <TextBox x:Name="txtSend" Text="hello world" Header="消息"></TextBox>
         <Button Content="send" x:Name="btnSend" Click="BtnSend_OnClick"></Button>
-        <TextBlock TextWrapping="Wrap" x:Name="txtRece"></TextBlock>
+        <TextBlock TextWrapping="Wrap" Text="回复"></TextBlock>
+        <TextBlock TextWrapping="Wrap" x:Name="txtMsg"></TextBlock>
     </StackPanel>
 </Page>

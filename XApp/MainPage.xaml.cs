@@ -39,7 +39,7 @@ namespace XApp
         {
             xmppClient.Send(new Message()
             {
-                To = "zl@desktop-b80818f",
+                To = txtRece.Text + "@desktop-b80818f",
                 Type = MessageType.Chat,
                 Body = txtSend.Text
             });
@@ -61,13 +61,12 @@ namespace XApp
 
             xmppClient = new XmppClient();
             xmppClient.Compression = false;
-            xmppClient.Hostname = "desktop-b80818f";
             xmppClient.ResolveSrvRecords = true;
             xmppClient.StartTls = false;
             xmppClient.Status = "Online";
             xmppClient.Show = Show.None;
 
-            Jid jid = new Jid("test@desktop-b80818f");
+            var jid = new Jid(txtName.Text + "@desktop-b80818f");
             xmppClient.Password = "123456789";
             xmppClient.Username = jid.User;
             xmppClient.SetXmppDomain(jid.Server);
@@ -86,7 +85,6 @@ namespace XApp
             xmppClient.OnSendBody += new EventHandler<BodyEventArgs>(XmppClientOnSendBody);
 
             xmppClient.Open();
-            //xmppClient.SendPresence(Show.Chat, "Online");
         }
 
 
@@ -139,7 +137,7 @@ namespace XApp
         {
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
-                txtRece.Text += e.Message.Body + "\r\n";
+                txtMsg.Text += e.Message.Body + "\r\n";
             });
         }
 
